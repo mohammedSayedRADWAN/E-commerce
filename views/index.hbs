@@ -1,0 +1,48 @@
+{{#each prodcuts}}
+<div class="row">
+  {{#each this}}
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="{{this.imgPath}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{this.prodcutName}}</h5>
+        <p class="card-text">
+          storage Capacity: {{this.imgInformation.storageCapacity}} <br>
+          Numper of sim: {{this.imgInformation.numberOfsim}} <br>
+          Rear camera resolution: {{this.imgInformation.cameraResolution}}<br>
+          display size: {{this.imgInformation.displaySize}}inc
+        </p>
+        <div class="card-buttom">
+          <div class="price">{{this.price}}$</div>
+           {{#if ../../cheackUser}}
+        <a href="/addToCart/{{this._id}}/{{this.price}}/{{this.prodcutName}}" 
+          class="btn btn-success">Buy</a>
+           {{else}}
+           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Buy
+</button>
+           {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/each}}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-triangle-exclamation"></i></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        please Sign In 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="/users/signin" class="btn btn-primary">Sign In</a>
+      </div>
+    </div>
+  </div>
+</div>

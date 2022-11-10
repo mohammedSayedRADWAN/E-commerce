@@ -1,0 +1,24 @@
+
+.card img{
+  max-width: 100%;
+  max-height: 200px;
+  padding-top: 10px;
+}
+.card-body .card-text{
+  font-size: 15px;
+}
+.card-buttom{
+  display: flex;
+  justify-content: space-between;
+}
+.price{
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.row{
+  padding-top: 20px;
+}
+.mt-n1 {
+  margin-left: 1rem ;
+}
